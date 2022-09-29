@@ -16,6 +16,7 @@
 		46EDC71127C6B8D200B870D7 /* BasicExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EDC71027C6B8D200B870D7 /* BasicExampleUITests.swift */; };
 		46EDC71327C6B8D200B870D7 /* BasicExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EDC71227C6B8D200B870D7 /* BasicExampleUITestsLaunchTests.swift */; };
 		46EDC72127C6B92C00B870D7 /* Segment in Frameworks */ = {isa = PBXBuildFile; productRef = 46EDC72027C6B92C00B870D7 /* Segment */; };
+		823B068D28E6199200E8899C /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = 823B068C28E6199200E8899C /* Mixpanel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823B068D28E6199200E8899C /* Mixpanel in Frameworks */,
 				465ACC5627CFFC0D0025BD02 /* SegmentMixpanel in Frameworks */,
 				46EDC72127C6B92C00B870D7 /* Segment in Frameworks */,
 			);
@@ -158,6 +160,7 @@
 			packageProductDependencies = (
 				46EDC72027C6B92C00B870D7 /* Segment */,
 				465ACC5527CFFC0D0025BD02 /* SegmentMixpanel */,
+				823B068C28E6199200E8899C /* Mixpanel */,
 			);
 			productName = BasicExample;
 			productReference = 46EDC6F227C6B8D100B870D7 /* BasicExample.app */;
@@ -233,6 +236,7 @@
 			mainGroup = 46EDC6E927C6B8D100B870D7;
 			packageReferences = (
 				46EDC71F27C6B92C00B870D7 /* XCRemoteSwiftPackageReference "analytics-swift" */,
+				823B068B28E6199200E8899C /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 			);
 			productRefGroup = 46EDC6F327C6B8D100B870D7 /* Products */;
 			projectDirPath = "";
@@ -608,6 +612,14 @@
 				minimumVersion = 1.1.2;
 			};
 		};
+		823B068B28E6199200E8899C /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -619,6 +631,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 46EDC71F27C6B92C00B870D7 /* XCRemoteSwiftPackageReference "analytics-swift" */;
 			productName = Segment;
+		};
+		823B068C28E6199200E8899C /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 823B068B28E6199200E8899C /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

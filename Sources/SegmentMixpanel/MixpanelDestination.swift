@@ -60,7 +60,7 @@ public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
         
         // Initialize mixpanel
         if let token = mixpanelSettings?.token {
-            mixpanel = Mixpanel.initialize(token: token)
+            mixpanel = Mixpanel.initialize(token: token, trackAutomaticEvents: false)
         }
         
         // Change the endpoint if euro one is set
