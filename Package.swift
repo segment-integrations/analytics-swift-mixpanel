@@ -28,7 +28,7 @@ let package = Package(
         .package(
             name: "Mixpanel",
             url: "https://github.com/mixpanel/mixpanel-swift",
-            from: "3.1.3"
+            from: "4.0.3"
         )
     ],
     targets: [
