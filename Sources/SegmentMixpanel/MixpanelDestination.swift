@@ -59,6 +59,9 @@ public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
         mixpanelSettings = tempSettings
         
         // Initialize mixpanel
+        // trackAutomaticEvents set to false because Mixpanel no longer supports it
+        // see blog for reference: 
+        // https://help.mixpanel.com/hc/en-us/articles/115004600343-Autotrack-Retirement
         if let token = mixpanelSettings?.token {
             mixpanel = Mixpanel.initialize(token: token, trackAutomaticEvents: false)
         }
