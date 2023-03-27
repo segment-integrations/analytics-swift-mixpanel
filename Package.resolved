@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/segmentio/analytics-swift.git",
         "state": {
           "branch": null,
-          "revision": "76316a5009502de6e7c2788c295e9afc68793cd3",
-          "version": "1.1.2"
+          "revision": "26f23a2ae9b8dd47aeee1bdaa1e203f3bed6044e",
+          "version": "1.4.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/mixpanel/mixpanel-swift",
         "state": {
           "branch": null,
-          "revision": "b1ff3fd1b5cb6e0228938e8008320ebfe701b3e4",
-          "version": "3.1.5"
+          "revision": "17642e5982664c3c72fa401627e4972966a6a597",
+          "version": "4.1.0"
         }
       },
       {
