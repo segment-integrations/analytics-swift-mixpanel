@@ -609,7 +609,7 @@
 			repositoryURL = "https://github.com/segmentio/analytics-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.2;
+				minimumVersion = 1.4.0;
 			};
 		};
 		823B068B28E6199200E8899C /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {

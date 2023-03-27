@@ -31,6 +31,13 @@ import Foundation
 import Segment
 import Mixpanel
 
+
+@objc(SEGMixpanelDestination)
+public class ObjCSegmentMixpanel: NSObject, ObjCDestination, ObjCDestinationShim {
+    public func instance() -> DestinationPlugin { return MixpanelDestination() }
+}
+
+
 public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
     public let timeline = Timeline()
     public let type = PluginType.destination
