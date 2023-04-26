@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SegmentMixpanel",
     platforms: [
-        //.macOS("10.15"),
+        .macOS("10.15"),
         .iOS("13.0"),
         .tvOS("11.0"),
         .watchOS("7.1")
@@ -23,7 +23,7 @@ let package = Package(
         .package(
             name: "Segment",
             url: "https://github.com/segmentio/analytics-swift.git",
-            from: "1.4.0"
+            from: "1.4.1"
         ),
         .package(
             name: "Mixpanel",

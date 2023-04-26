@@ -33,10 +33,9 @@ import Mixpanel
 
 
 @objc(SEGMixpanelDestination)
-public class ObjCSegmentMixpanel: NSObject, ObjCDestination, ObjCDestinationShim {
-    public func instance() -> DestinationPlugin { return MixpanelDestination() }
+public class ObjCSegmentMixpanel: NSObject, ObjCPlugin, ObjCPluginShim {
+    public func instance() -> EventPlugin { return MixpanelDestination() }
 }
-
 
 public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
     public let timeline = Timeline()
