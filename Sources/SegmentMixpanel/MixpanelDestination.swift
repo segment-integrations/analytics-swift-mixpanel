@@ -327,7 +327,7 @@ extension MixpanelDestination: VersionedPlugin {
 
 private struct MixpanelSettings: Codable {
     let token: String
-    let enableEuropeanUnionEndpoint: Bool
+    let enableEuropeanUnionEndpoint: Bool?
     let consolidatedPageCalls: Bool
     let trackAllPages: Bool
     let trackNamedPages: Bool
