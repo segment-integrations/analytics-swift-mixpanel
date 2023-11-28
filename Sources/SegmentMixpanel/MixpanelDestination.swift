@@ -69,7 +69,11 @@ public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
         // see blog for reference: 
         // https://help.mixpanel.com/hc/en-us/articles/115004600343-Autotrack-Retirement
         if let token = mixpanelSettings?.token {
+#if !os(OSX) && !os(watchOS)
             mixpanel = Mixpanel.initialize(token: token, trackAutomaticEvents: false)
+#else
+            mixpanel = Mixpanel.initialize(token: token)
+#endif
         }
         
         // Change the endpoint if euro one is set
