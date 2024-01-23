@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/segmentio/analytics-swift",
         "state": {
           "branch": null,
-          "revision": "efc111b5fccaebd1063ef0db6d206c252da387ec",
-          "version": "1.4.8"
+          "revision": "51f56b972de8daee251f18fd2c91fa3a33c8d77e",
+          "version": "1.5.2"
+        }
+      },
+      {
+        "package": "JSONSafeEncoder",
+        "repositoryURL": "https://github.com/segmentio/jsonsafeencoder-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "8b70dc8c01b7b041912e30e29d2b488a43f782ac",
+          "version": "1.0.1"
         }
       },
       {

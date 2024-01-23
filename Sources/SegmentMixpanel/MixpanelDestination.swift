@@ -79,7 +79,7 @@ public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
         // Change the endpoint if euro one is set
         if let euEndpointEnabled = mixpanelSettings?.enableEuropeanUnionEndpoint,
            euEndpointEnabled {
-            mixpanel?.serverURL = "api-eu.mixpanel.com"
+            mixpanel?.serverURL = "https://api-eu.mixpanel.com"
         }
     }
     
