@@ -30,6 +30,9 @@
 import Foundation
 import Segment
 import Mixpanel
+#if os(iOS)
+import MixpanelSessionReplay
+#endif
 
 
 @objc(SEGMixpanelDestination)
@@ -42,10 +45,16 @@ public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
     public let type = PluginType.destination
     public let key = "Mixpanel"
     public var analytics: Analytics? = nil
-    
+
     private var mixpanel: MixpanelInstance? = nil
     private var mixpanelSettings: MixpanelSettings? = nil
-    
+
+    #if os(iOS)
+    /// Optional session replay configuration. When set, session replay is initialized
+    /// alongside the Mixpanel SDK. Set this before the plugin receives its first `update` call.
+    public var sessionReplayConfig: MPSessionReplayConfig? = nil
+    #endif
+
     public init() { }
     
     public func update(settings: Settings, type: UpdateType) {
@@ -81,6 +90,16 @@ public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
            euEndpointEnabled {
             mixpanel?.serverURL = "https://api-eu.mixpanel.com"
         }
+
+        #if os(iOS)
+        if let replayConfig = sessionReplayConfig, let token = mixpanel?.apiToken {
+            MPSessionReplay.initialize(
+                token: token,
+                distinctId: mixpanel?.distinctId ?? "",
+                config: replayConfig
+            )
+        }
+        #endif
     }
     
     public func identify(event: IdentifyEvent) -> IdentifyEvent? {
@@ -88,6 +107,9 @@ public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
         if let eventUserID = event.userId, !eventUserID.isEmpty {
             mixpanel?.identify(distinctId: eventUserID)
             analytics?.log(message: "Mixpanel identify \(eventUserID)")
+            #if os(iOS)
+            MPSessionReplay.getInstance()?.identify(distinctId: eventUserID)
+            #endif
         }
         
         guard let traits = try? event.traits?.dictionaryValue?.mapTransform(MixpanelDestination.keyMap,
@@ -213,9 +235,14 @@ public class MixpanelDestination: DestinationPlugin, RemoteNotifications {
     
     public func reset() {
         flush()
-        
+
         mixpanel?.reset()
         analytics?.log(message: "Mixpanel reset")
+        #if os(iOS)
+        if let newDistinctId = mixpanel?.distinctId {
+            MPSessionReplay.getInstance()?.identify(distinctId: newDistinctId)
+        }
+        #endif
     }
     
     public func flush() {
