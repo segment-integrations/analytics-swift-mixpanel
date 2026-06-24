@@ -11,12 +11,39 @@
         }
       },
       {
+        "package": "jsonlogic",
+        "repositoryURL": "https://github.com/advantagefse/json-logic-swift",
+        "state": {
+          "branch": null,
+          "revision": "9088eed1b26937fe13d248aa24d7632a51be28e2",
+          "version": "1.2.4"
+        }
+      },
+      {
+        "package": "MixpanelSessionReplay",
+        "repositoryURL": "https://github.com/mixpanel/mixpanel-ios-session-replay-package",
+        "state": {
+          "branch": null,
+          "revision": "77ebe80b8472d151ff100dc86ee7e087147ad065",
+          "version": "1.5.1"
+        }
+      },
+      {
         "package": "Mixpanel",
         "repositoryURL": "https://github.com/mixpanel/mixpanel-swift",
         "state": {
           "branch": null,
-          "revision": "17642e5982664c3c72fa401627e4972966a6a597",
-          "version": "4.1.0"
+          "revision": "15261f41bb50fc7b5b183d4bf8a125a5219dbacf",
+          "version": "6.4.1"
+        }
+      },
+      {
+        "package": "MixpanelSwiftCommon",
+        "repositoryURL": "https://github.com/mixpanel/mixpanel-swift-common.git",
+        "state": {
+          "branch": null,
+          "revision": "ffd168d972a1bea7e86104f253a3e105c69217e5",
+          "version": "1.0.1"
         }
       },
       {

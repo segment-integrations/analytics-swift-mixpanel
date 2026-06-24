@@ -28,7 +28,12 @@ let package = Package(
         .package(
             name: "Mixpanel",
             url: "https://github.com/mixpanel/mixpanel-swift",
-            from: "4.0.3"
+            from: "6.4.1"
+        ),
+        .package(
+            name: "MixpanelSessionReplay",
+            url: "https://github.com/mixpanel/mixpanel-ios-session-replay-package",
+            from: "1.5.1"
         )
     ],
     targets: [
@@ -36,7 +41,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SegmentMixpanel",
-            dependencies: ["Segment", "Mixpanel"]),
+            dependencies: [
+                "Segment",
+                "Mixpanel",
+                .product(name: "MixpanelSessionReplay", package: "MixpanelSessionReplay", condition: .when(platforms: [.iOS]))
+            ]),
         
         // TESTS ARE HANDLED VIA THE EXAMPLE APP.
     ]
